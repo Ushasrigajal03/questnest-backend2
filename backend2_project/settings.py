@@ -124,6 +124,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Add this line - this is the absolute filesystem path where collectstatic will collect files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -136,8 +140,9 @@ API_KEY = 'backend2-secret-key'  # In production, use environment variables
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Heroku settings
+import django_heroku
+django_heroku.settings(locals())
