@@ -135,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # API Key settings
 API_KEY_HEADER = 'X-API-KEY'
-API_KEY = 'backend2-secret-key'  # In production, use environment variables
+API_KEY = 'questnest-backend2-api-8f12e9d7b43c6a95'  # In production, use environment variables
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
