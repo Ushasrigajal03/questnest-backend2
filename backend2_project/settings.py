@@ -144,5 +144,5 @@ CORS_ALLOW_ALL_ORIGINS = True  # For development only
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Heroku settings
-import django_heroku
+import django_herok
 django_heroku.settings(locals())
