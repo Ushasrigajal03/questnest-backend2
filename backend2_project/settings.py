@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # This should be at the top
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,9 +138,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 API_KEY_HEADER = 'X-API-KEY'
 API_KEY = 'questnest-backend2-api-8f12e9d7b43c6a95'  # In production, use environment variables
 
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
+CORS_ALLOWED_ORIGINS = [
+    "https://questnest.in",
+    "https://tenant1.questnest.in",
+    "https://tenant2.questnest.in",
+    "https://questnest-frontend.vercel.app",
+    "http://localhost:3000",  # For local development
+]
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'x-api-key',  # Add your custom header
+]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
