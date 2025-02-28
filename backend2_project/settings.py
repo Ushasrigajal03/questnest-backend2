@@ -139,6 +139,7 @@ API_KEY = 'questnest-backend2-api-8f12e9d7b43c6a95'  # In production, use enviro
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # For development only
+CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
